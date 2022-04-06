@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Map.hpp"
+#include "../header/Map.hpp"
 
 class SampleMap : public Map
 {
@@ -19,6 +19,6 @@ public:
     };
     SampleMap();
     ~SampleMap();
-    void Show();
+    void Show() override;
 //    void ShowCharacter();
 };

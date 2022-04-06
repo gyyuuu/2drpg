@@ -15,7 +15,7 @@ private:
     int32_t m_character_HP;
 
 public:
-    SampleCharacter(SampleMap *m_c_samplemap);
+    SampleCharacter();
     ~SampleCharacter();
     void ShowStatus();
     bool ShowPosition(int32_t x_point, int32_t y_point);

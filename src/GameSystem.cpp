@@ -1,5 +1,5 @@
 #include <iostream>
-#include "GameSystem.hpp"
+#include "../header/GameSystem.hpp"
 
 GameSystem::GameSystem() {
     sample_map = new SampleMap();

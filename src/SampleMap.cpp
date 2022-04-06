@@ -1,5 +1,5 @@
 #include <iostream>
-#include "SampleMap.hpp"
+#include "../header/SampleMap.hpp"
 
 SampleMap::SampleMap() {
 for (int x = 0; x < MAP_XSIZE; x++) {

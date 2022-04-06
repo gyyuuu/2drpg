@@ -9,3 +9,19 @@
   毒、麻痺、沈黙、混乱、石化
 ・戦闘中のステータス補正をもつ
 バフ、デバフ
+・戦闘中にアイテムを使える
+・固有のスキルわざを持つ
+
+class character {
+  std::string character_name
+  struct status {
+    int32_t Lv;
+    int32_t HP;
+    int32_t MP;
+    int32_t SP;
+    int32_t ATK;
+    int32_t DEF;
+    int32_t AGI;
+    int32_t LUK;
+  }
+}
