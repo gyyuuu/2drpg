@@ -1,12 +1,12 @@
 #pragma once
 #include <iostream>
 #include "SampleMap.hpp"
-//#include "SampleCharacter.hpp"
+//#include "../SampleCharacter.hpp"
 
 class GameSystem
 {
 public:
-    SampleMap *sample_map; 
+    Map *sample_map; 
     //SampleCharacter *sample_character;
     GameSystem(/* args */);
     ~GameSystem();

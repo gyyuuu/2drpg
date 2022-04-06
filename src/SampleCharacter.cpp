@@ -1,8 +1,7 @@
 #include <iostream>
-#include "SampleCharacter.hpp"
+#include "../header/SampleCharacter.hpp"
 
-SampleCharacter::SampleCharacter(SampleMap *c_sampleMap) {
-    m_c_samplemap = c_sampleMap;
+SampleCharacter::SampleCharacter() {
     m_character_point_x = START_POINT_X;
     m_character_point_y = START_POINT_Y;
     m_character_HP = MAX_HP;

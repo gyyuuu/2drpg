@@ -1,4 +1,4 @@
-#include "GameSystem.hpp"
+#include "../header/GameSystem.hpp"
 
 int main() {
     GameSystem game_system;
