@@ -2,17 +2,17 @@
 #include "../header/SampleCharacter.hpp"
 
 SampleCharacter::SampleCharacter() {
-    m_character_point_x = START_POINT_X;
-    m_character_point_y = START_POINT_Y;
-    m_character_HP = MAX_HP;
+    m_point_x= START_POINT_X;
+    m_point_y= START_POINT_Y;
+    m_hp= MAX_HP;
 }
 
 void SampleCharacter::ShowStatus() {
-    std::cout << "SampleCharacter: (" << m_character_point_x<< "," << m_character_point_y << ")" << m_character_HP << std::endl;
+    std::cout << "SampleCharacter: (" << m_point_x << "," << m_point_y << ")" << m_hp << std::endl;
 }
 
-bool SampleCharacter::ShowPosition(int32_t x_point, int32_t y_point) {
-   if ((x_point == m_character_point_x) && (y_point == m_character_point_y)) {
+void SampleCharacter::DrawMap(int32_t x_point, int32_t y_point) {
+   if ((x_point = m_point_x) && (y_point == m_point_y)) {
        std::cout << '@' << std::endl;
    }
 }

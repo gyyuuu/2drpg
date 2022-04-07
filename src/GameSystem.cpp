@@ -10,9 +10,16 @@ GameSystem::~GameSystem() {
 }
 
 void GameSystem::GameCreate() {
-    sample_map->Show();
-//    sample_character->ShowStatus();
-    std::cout << std::endl;
+    const static int map_ysize = 10;
+    const static int map_xsize = 10;
+    for (int32_t y = 0; y < map_ysize ; y++) {
+        for (int32_t x = 0; x < map_xsize; x++) {
+            sample_map->DrawMap(x,y);
+//          sample_character->ShowStatus();
+            //std::cout << std::endl;
+        }
+        std::cout << std::endl;
+    }
 }
 
 void GameSystem::MainLoop() {

@@ -2,12 +2,8 @@
 
 class IDrawMapInfo
 {
-protected:
-    //static int32_t m_maptable[][]=0;
-
 public:
     IDrawMapInfo(/* args */);
     ~IDrawMapInfo();
-    virtual void DrawMap() = 0;
-    virtual void DrawCharacter() = 0;
+    virtual void DrawMap(int32_t map_x, int32_t map_y) = 0;
 };

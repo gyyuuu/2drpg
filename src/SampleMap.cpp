@@ -19,21 +19,16 @@ for (int x = 0; x < MAP_XSIZE; x++) {
 SampleMap::~SampleMap(){    
 }
 
-void SampleMap::Show() {
-    for (int32_t y = 0; y < MAP_YSIZE; y++) {
-        for (int32_t x = 0; x < MAP_XSIZE; x++) {
-            int32_t mapCells = SampleMap::m_maptable[x][y];
-            if (mapCells == ROCK) {
-                std::cout << "■" << ' ';
-            }
-            if (mapCells == EMPTY) {
-                std::cout << '.' << ' ';
-            }
-            if (mapCells == GOAL) { 
-                std::cout << 'G' << ' ';
-            }
-        }
-        std::cout << std::endl;
+void SampleMap::DrawMap(int32_t map_x, int32_t map_y) {            
+    int32_t mapCells = SampleMap::m_maptable[map_x][map_y];
+    if (mapCells == ROCK) {
+            std::cout << "■" << ' ';
+    }
+    if (mapCells == EMPTY) {
+            std::cout << '.' << ' ';
+    }
+    if (mapCells == GOAL) { 
+            std::cout << 'G' << ' ';
     }
 }
 
