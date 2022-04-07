@@ -1,8 +1,7 @@
 #pragma once
+#include "IDrawMapInfo.hpp"
 #include <iostream>
-#include "../header/Map.hpp"
-
-class SampleMap : public Map
+class SampleMap : public IDrawMapInfo
 {
 protected:
     static const int32_t MAP_XSIZE = 10;
@@ -19,6 +18,6 @@ public:
     };
     SampleMap();
     ~SampleMap();
-    void Show() override;
+    void DrawMap(int32_t map_x, int32_t map_y) override;
 //    void ShowCharacter();
 };
