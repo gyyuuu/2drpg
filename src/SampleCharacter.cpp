@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../header/SampleCharacter.hpp"
+#include "SampleCharacter.hpp"
 
 SampleCharacter::SampleCharacter() {
     m_point_x= START_POINT_X;

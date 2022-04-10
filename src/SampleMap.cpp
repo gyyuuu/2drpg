@@ -1,35 +1,25 @@
 #include <iostream>
-#include "../header/SampleMap.hpp"
+#include "SampleMap.hpp"
 
-SampleMap::SampleMap() {
-for (int x = 0; x < MAP_XSIZE; x++) {
-    for (int y = 0; y < MAP_YSIZE; y++) {
-        if ((y == 0) || (y == MAP_YSIZE - 1) ||
-             (x == 0) || (x == MAP_XSIZE - 1)) {
-                SampleMap::m_maptable[x][y] = ROCK;
+SampleMap::SampleMap(const DrawableInterface* drawer, const ImageId image)
+    : m_drawer(drawer)
+    , m_imageid(image) {
+    for (int x = 0; x < MAP_XSIZE; x++) {
+        for (int y = 0; y < MAP_YSIZE; y++) {
+            if ((y == 0) || (y == MAP_YSIZE - 1) ||
+                    (x == 0) || (x == MAP_XSIZE - 1)) {
+                    maptable[x][y] = IMAGE_ID_ROCK;
+                }
+                else {
+                    maptable[x][y] = IMAGE_ID_EMPTY;
             }
-            else {
-                SampleMap::m_maptable[x][y] = EMPTY;
-            }
+        SampleMap::m_maptable[MAP_GOAL_POSITION_X][MAP_GOAL_POSITION_Y] = IMAGE_ID_GOAL;
         }
     }
-    SampleMap::m_maptable[MAP_GOAL_POSITION_X][MAP_GOAL_POSITION_Y] = GOAL;
 }
 
-SampleMap::~SampleMap(){    
-}
-
-void SampleMap::DrawMap(int32_t map_x, int32_t map_y) {            
-    int32_t mapCells = SampleMap::m_maptable[map_x][map_y];
-    if (mapCells == ROCK) {
-            std::cout << "■" << ' ';
-    }
-    if (mapCells == EMPTY) {
-            std::cout << '.' << ' ';
-    }
-    if (mapCells == GOAL) { 
-            std::cout << 'G' << ' ';
-    }
+void SampleMap::DrawMap() {            
+    m_drawer->DrawMap(m_position, m_imageid);
 }
 
 //void SampleMap::ShowCharacter() {

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../header/Map.hpp"
+#include "Map.hpp"
 
 Map::Map() {
 }

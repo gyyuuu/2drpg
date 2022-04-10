@@ -1,8 +1,8 @@
 #pragma once
-#include "IDrawMapInfo.hpp"
+#include "DrawableInterface.hpp"
 #include <iostream>
 
-class SampleCharacter : public IDrawMapInfo
+class SampleCharacter 
 {
 private:
     static const int32_t START_POINT_X= 8;
