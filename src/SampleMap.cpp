@@ -6,20 +6,23 @@ SampleMap::SampleMap(const DrawableInterface* drawer, const ImageId image)
     , m_imageid(image) {
     for (int x = 0; x < MAP_XSIZE; x++) {
         for (int y = 0; y < MAP_YSIZE; y++) {
-            if ((y == 0) || (y == MAP_YSIZE - 1) ||
-                    (x == 0) || (x == MAP_XSIZE - 1)) {
-                    maptable[x][y] = IMAGE_ID_ROCK;
+            for (int i = 0; i < MAP_SIZE; i++) {
+                if ((y == 0) || (y == MAP_YSIZE - 1) ||
+                        (x == 0) || (x == MAP_XSIZE - 1)) {
+                        m_position[i].m_x = x;
+                        m_position[i].m_y = y;
+                    }
+                    else {
+                        m_position[i].m_x = x;
+                        m_position[i].m_y = y;
                 }
-                else {
-                    maptable[x][y] = IMAGE_ID_EMPTY;
             }
-        SampleMap::m_maptable[MAP_GOAL_POSITION_X][MAP_GOAL_POSITION_Y] = IMAGE_ID_GOAL;
         }
     }
 }
 
-void SampleMap::DrawMap() {            
-    m_drawer->DrawMap(m_position, m_imageid);
+void SampleMap::Draw() {            
+    m_drawer->Draw(m_position.data(), m_imageid);
 }
 
 //void SampleMap::ShowCharacter() {

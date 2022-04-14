@@ -2,7 +2,7 @@
 CC = clang++
 
 #コンパイルオプション
-CFLAGS = -Weverithing -Werror -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded
+CFLAGS = -g -MMD -MP -std=C++20 -Wall -Wextra -Winit-self -Wno-missing-field-initializer
 
 #実行ファイル名
 TARGET = Sample
@@ -18,7 +18,7 @@ SRCS += ConsoleDrawer.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 #インクルードファイルのパス
-INCDIR = -I./include
+INCDIR = -I./header
 
 #ライブラリのパス
 LIBDIR =

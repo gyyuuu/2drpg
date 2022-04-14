@@ -6,7 +6,6 @@
 class DrawableInterface
 {
 public:
-    DrawableInterface(){};
     virtual ~DrawableInterface(){};
-    virtual void DrawMap(Position position, ImageId image) const = 0;
+    virtual void Draw(Position* position, ImageId image) const = 0;
 };
