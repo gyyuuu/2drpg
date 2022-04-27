@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 //キャラクターを表現する文字列

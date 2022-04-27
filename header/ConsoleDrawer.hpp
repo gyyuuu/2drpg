@@ -8,5 +8,5 @@ public:
     ConsoleDrawer(){};
     ~ConsoleDrawer(){};
 
-    void Draw(Position* position, ImageId imageid) const override;
+    void Draw(celllist celllist) const override;
 };

@@ -1,45 +1,25 @@
-#include <iostream>
 #include "GameSystem.hpp"
+#include <iostream>
+#include <memory>
+#include <ncurses.h>
+GameSystem::GameSystem(){}
 
-GameSystem::GameSystem() {
-    sample_map = new SampleMap();
-    //sample_character = new SampleCharacter(sample_map);
-}
-
-GameSystem::~GameSystem() {
-}
+GameSystem::~GameSystem(){}
 
 void GameSystem::GameCreate() {
-    const static int map_ysize = 10;
-    const static int map_xsize = 10;
-    for (int32_t y = 0; y < map_ysize ; y++) {
-        for (int32_t x = 0; x < map_xsize; x++) {
-            sample_map->DrawMap(x,y);
-//          sample_character->ShowStatus();
-            //std::cout << std::endl;
-        }
-        std::cout << std::endl;
-    }
+    initscr();
+	noecho();
+	cbreak();
+	keypad(stdscr, TRUE);    
 }
 
 void GameSystem::MainLoop() {
-    GameCreate();
-    GetKeybordInuput();
+    ConsoleDrawer* consoledrawer = new ConsoleDrawer;
+    SampleMap* map = new SampleMap{consoledrawer};
     while (true)
     {
-
-//       Turn();
-//       system("clear");
+        map->Draw();
     }
-}
-
-//void GameSystem::Turn() {
-    //sample_character->Move();
-//}
-
-char GameSystem::GetKeybordInuput() {
-    char input;
-    std::cout << "どうしますか" << std::endl;
-    std::cin >> input;
-    return input;
+    endwin();
+    return;
 }

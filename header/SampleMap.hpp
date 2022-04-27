@@ -1,21 +1,22 @@
 #pragma once
 #include "DrawableInterface.hpp"
-#include "Position.hpp"
+#include "Cell.hpp"
 #include "Image.hpp"
 #include "ImageId.hpp"
 #include "MapTable.hpp"
 #include <iostream>
-#include <array>
+#include <vector>
 
 class SampleMap 
 {
 public:
-    SampleMap(const DrawableInterface* drawer, const ImageId image);
+    SampleMap(const DrawableInterface* drawer);
     ~SampleMap(){};
     void Draw();
 
 private:
     const DrawableInterface* m_drawer;
-    const ImageId m_imageid;
-    std::array<Position, MAP_SIZE> m_position;
+    using cellcolumn = std::vector<Cell>;
+    using celllist = std::vector<cellcolumn>;
+    celllist m_celllist;
 };
