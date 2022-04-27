@@ -15,10 +15,14 @@ void GameSystem::GameCreate() {
 
 void GameSystem::MainLoop() {
     ConsoleDrawer* consoledrawer = new ConsoleDrawer;
+    KeybordInputer* kebordinputer = new KeybordInputer;
     SampleMap* map = new SampleMap{consoledrawer};
+    SampleCharacter* character = new SampleCharacter{consoledrawer, kebordinputer};
     while (true)
     {
         map->Draw();
+        refresh();
+        character->Move();
     }
     endwin();
     return;

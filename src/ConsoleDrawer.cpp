@@ -24,4 +24,5 @@ void ConsoleDrawer::Draw(celllist celllist) const {
             }
         }
     }
+    mvprintw(celllist[MAP_XSIZE-2][MAP_YSIZE-2].m_x, celllist[MAP_XSIZE-2][MAP_YSIZE-2].m_y, "@");
 }
